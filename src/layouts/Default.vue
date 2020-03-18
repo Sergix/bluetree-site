@@ -1,8 +1,10 @@
 <template>
-  <div class="layout">
-    <Navbar />
-    <slot />
-    <Footer />
+  <div class="layout flex flex-col h-screen">
+    <Navbar class="flex-0" />
+    <div class="flex-1 px-8 mt-4">
+      <slot />
+    </div>
+    <Footer class="flex-0" />
   </div>
 </template>
 
@@ -14,7 +16,7 @@ export default {
   name: 'DefaultLayout',
   components: {
     Navbar,
-    Footer
-  }
+    Footer,
+  },
 }
 </script>

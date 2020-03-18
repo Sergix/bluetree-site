@@ -1,5 +1,5 @@
 <template>
-  <footer class="bg-primary-darker">
+  <footer class="bg-primary-darker px-8 text-white py-4">
     <h2>{{ $static.metadata.siteName }}</h2>
   </footer>
 </template>
@@ -14,6 +14,6 @@ query {
 
 <script>
 export default {
-  name: "Footer",
+  name: 'Footer',
 }
 </script>

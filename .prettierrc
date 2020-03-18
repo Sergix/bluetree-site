@@ -8,5 +8,6 @@
   "quoteProps": "consistent",
   "useTabs": false,
   "vueIndentScriptAndStyle": false,
-  "trailingComma": "es5"
+  "trailingComma": "es5",
+  "singleQuote": true
 }
