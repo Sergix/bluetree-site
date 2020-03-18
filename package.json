@@ -1,5 +1,6 @@
 {
   "name": "bluetree-site",
+  "author": "sergix",
   "private": true,
   "license": "MIT",
   "scripts": {
@@ -10,7 +11,8 @@
   "dependencies": {
     "gridsome": "^0.7.0",
     "hamburgers": "^1.1.3",
-    "vue-burger": "^1.0.6"
+    "vue-burger": "^1.0.6",
+    "vue2-transitions": "^0.3.0"
   },
   "devDependencies": {
     "gridsome-plugin-tailwindcss": "^2.2.43",

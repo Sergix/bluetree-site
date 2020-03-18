@@ -1,9 +1,8 @@
 <template>
   <button
     class="hamburger hamburger--collapse"
-    v-bind:class="{ 'is-active': isActive }"
+    v-bind:class="{ 'is-active': active }"
     type="button"
-    @click="isActive = !isActive"
   >
     <span class="hamburger-box">
       <span class="hamburger-inner"></span>
@@ -16,11 +15,7 @@ import '@/scss/hamburgers/hamburgers.scss'
 
 export default {
   name: 'MenuButton',
+  props: ['active'],
   components: {},
-  data() {
-    return {
-      isActive: false,
-    }
-  },
 }
 </script>

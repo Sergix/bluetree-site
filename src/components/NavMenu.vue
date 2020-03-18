@@ -1,6 +1,6 @@
 <template>
   <aside
-    class="bg-primary-darker text-white absolute w-full h-full right-0 pt-16 text-5xl z-0"
+    class="absolute bg-primary-darker top-0 text-white w-full h-full right-0 pt-16 text-5xl z-0"
   >
     <ul class="flex flex-col content-end pr-8 text-right">
       <g-link class="nav-item" to="/">Home</g-link>
