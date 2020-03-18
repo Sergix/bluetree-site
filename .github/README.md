@@ -4,8 +4,8 @@ Built with [Gridsome](https://gridsome.org/).
 
 Launch development environment with
 
-`gridsome develop`.
+`yarn serve`
 
 Build with
 
-`gridsome build` (`/dist`).
+`yarn build` (`/dist`).

@@ -1,12 +1,16 @@
 {
-  "name": "bluetree",
+  "name": "bluetree-site",
   "private": true,
+  "license": "MIT",
   "scripts": {
     "build": "gridsome build",
-    "develop": "gridsome develop",
+    "serve": "gridsome develop",
     "explore": "gridsome explore"
   },
   "dependencies": {
     "gridsome": "^0.7.0"
+  },
+  "devDependencies": {
+    "gridsome-plugin-tailwindcss": "^2.2.43"
   }
 }
