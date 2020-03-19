@@ -1,3 +1,5 @@
+const plugin = require('tailwindcss/plugin')
+
 module.exports = {
   theme: {
     extend: {
@@ -19,8 +21,29 @@ module.exports = {
       zIndex: {
         'neg-1': '-1',
       },
+      margin: {
+        auto: 'auto',
+      },
+      fontFamily: {
+        sans: '"Roboto Slab"',
+        serif: 'Gelasio',
+      },
     },
   },
   variants: {},
-  plugins: [],
+  plugins: [
+    plugin(function({ addBase, config }) {
+      addBase({
+        h1: {
+          fontSize: config('theme.fontSize.2xl'),
+        },
+        h2: {
+          fontSize: config('theme.fontSize.xl'),
+        },
+        h3: {
+          fontSize: config('theme.fontSize.lg'),
+        },
+      })
+    }),
+  ],
 }
