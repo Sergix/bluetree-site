@@ -4,7 +4,9 @@
     <h2 class="flex flex-0 text-white items-center text-base font-normal">
       Bluetree Landscaping
     </h2>
-    <NavItems class="flex-1 pl-12 py-4 ml-auto hidden md:inline nav" />
+    <NavItems
+      class="navlist flex-1 pl-16 py-4 ml-auto my-auto hidden md:inline nav text-white"
+    />
     <MenuButton
       class="self-end align-end menu-button z-10 md:invisible"
       @click.native="toggleNavMenu"
@@ -50,8 +52,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.nav-item {
+/deep/ .navlist > .nav-item {
   @apply px-4;
+  @apply mr-2;
   @apply text-white;
   @apply text-sm;
 }
