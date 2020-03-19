@@ -23,7 +23,7 @@
 
     <section class="mt-12">
       <h2 class="font-medium text-center">Contact Information</h2>
-      <DetailSection title="Email">
+      <DetailSection title="Email" class="mt-2">
         bluetreelandscapingllc@gmail.com
       </DetailSection>
       <DetailSection title="Phone" class="mt-4">
@@ -35,7 +35,7 @@
       Complete property landscaping maintenance offered with one-time services
       and multi-service contracts.
     </ImageSection>
-    <ImageSection title="Charleston Area" image="bridge.jpg" class="mt-8">
+    <ImageSection title="Charleston Area" image="bridge.jpg" class="mt-6">
       We service the greater charleston area, including Dorchester, Berkeley,
       and Charleston county.
     </ImageSection>

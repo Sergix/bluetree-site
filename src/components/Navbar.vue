@@ -58,5 +58,6 @@ export default {
 
 .menu-button {
   margin-left: auto;
+  margin-top: 5px;
 }
 </style>
