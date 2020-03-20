@@ -38,8 +38,16 @@ export default {
     }
   },
   methods: {
+    toggleBodyOverflow() {
+      const el = document.body
+      const className = 'overflow-hidden'
+      this.navMenu
+        ? el.classList.add(className)
+        : el.classList.remove(className)
+    },
     toggleNavMenu() {
       this.navMenu = !this.navMenu
+      this.toggleBodyOverflow()
     },
     closeMenu() {
       this.navMenu = false

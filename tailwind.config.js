@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       colors: {
         primary: {
+          lighter: '#84b9bf',
           default: '#73AFB6',
           darker: '#5F9DA1',
         },
@@ -17,6 +18,8 @@ module.exports = {
       height: {
         '1/2': '50%',
         '3/4': '75%',
+        '32': '32em',
+        '16': '16em',
       },
       zIndex: {
         'neg-1': '-1',
@@ -28,9 +31,18 @@ module.exports = {
         sans: '"Roboto Slab"',
         serif: 'Gelasio',
       },
+      minWidth: {
+        '0': '0',
+        '1/4': '25%',
+        '1/2': '50%',
+        '3/4': '75%',
+        'full': '100%',
+      },
     },
   },
-  variants: {},
+  variants: {
+    backgroundColor: ['responsive', 'hover', 'focus', 'active'],
+  },
   plugins: [
     plugin(function({ addBase, config }) {
       addBase({
