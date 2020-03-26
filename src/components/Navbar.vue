@@ -1,6 +1,6 @@
 <template>
   <!-- rounded app bar: "border-0 rounded-full m-2 shadow-md" -->
-  <header class="flex flex-row pl-8 pr-4 py-2 bg-primary-darker z-10">
+  <header class="flex flex-row pl-8 pr-4 py-2 bg-primary-darker z-10 lg:px-32">
     <h2 class="flex flex-0 text-white items-center text-base font-normal">
       Bluetree Landscaping
     </h2>
@@ -51,8 +51,11 @@ export default {
     },
     closeMenu() {
       this.navMenu = false
+      this.toggleBodyOverflow()
     },
   },
+
+  // on route change, close menu
   watch: {
     $route: 'closeMenu',
   },

@@ -8,7 +8,8 @@
       quote.
     </p>
     <form class="w-full mt-4 p-4 flex flex-col">
-      <fieldset class="flex flex-col mx-auto">
+      <fieldset class="flex flex-col mx-auto px-4 py-2 w-3/4">
+        <legend class="text-lg mx-auto">Project Type</legend>
         <CheckboxField label="Mowing" />
         <CheckboxField label="Weed Eating" />
         <CheckboxField label="Grass Cutting" />
@@ -16,7 +17,7 @@
       <fieldset class="mt-4 mx-auto">
         <label>
           Estimated square footage of lawn
-          <TextInput class="block" placeholder="square footage" />
+          <TextInput class="block mx-auto" placeholder="square footage" />
         </label>
       </fieldset>
       <Button class="flex mt-8 mx-auto" type="button">
