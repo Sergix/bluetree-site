@@ -1,13 +1,13 @@
 <template>
   <section class="inline">
-    <a href="https://www.facebook.com/" rel="Facebook" class="mr-1">
-      <FacebookIcon width="25" height="25" />
+    <a href="https://www.facebook.com/" class="mr-1" aria-label="Facebook">
+      <FacebookIcon width="25" height="25" aria-label="Facebook" />
     </a>
-    <a href="https://www.twitter.com/" rel="Twitter" class="mr-1">
-      <TwitterIcon width="25" height="25" />
+    <a href="https://www.twitter.com/" class="mr-1" aria-label="Twitter">
+      <TwitterIcon width="25" height="25" aria-label="Twitter" />
     </a>
-    <a href="https://www.linkedin.com/" rel="LinkedIn">
-      <LinkedInIcon width="25" height="25" />
+    <a href="https://www.linkedin.com/" aria-label="LinkedIn">
+      <LinkedInIcon width="25" height="25" aria-label="LinkedIn" />
     </a>
   </section>
 </template>

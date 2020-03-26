@@ -8,6 +8,7 @@ module.exports = {
           lighter: '#84b9bf',
           default: '#73AFB6',
           darker: '#5F9DA1',
+          darkest: '#385F61',
         },
         secondary: {
           lighter: '#E2D893',

@@ -1,6 +1,6 @@
 <template>
   <input
-    class="rounded bg-white border border-gray-600 mt-4 px-3 py-2"
+    class="rounded bg-white border border-gray-600 placeholder-gray-700 px-3 py-2 focus:border-primary"
     type="text"
     :placeholder="placeholder"
   />

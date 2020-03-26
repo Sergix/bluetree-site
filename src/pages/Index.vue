@@ -22,6 +22,7 @@
         <g-image
           class="mt-8 lg:self-center lg:max-w-lg"
           src="~/assets/image/tools_compressed-50.jpg"
+          alt="Tools"
         />
       </div>
     </div>
@@ -62,6 +63,7 @@
       <g-image
         class="mt-4 md:px-16 lg:py-16"
         src="~/assets/image/house-lawn_compressed-50.jpg"
+        alt="House"
       />
     </section>
 
@@ -80,10 +82,11 @@
       <g-image
         class="mt-4 md:px-16 lg:py-16"
         src="~/assets/image/bridge_compressed-50.jpg"
+        alt="Ravanel bridge"
       />
     </section>
 
-    <Contact class="mx-auto mt-24 md:w-1/2 lg:w-1/4" />
+    <Contact class="mx-auto mt-24 md:w-2/3 lg:w-1/4" />
   </main>
 </template>
 

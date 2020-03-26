@@ -1,7 +1,7 @@
 <template>
   <button
     :type="type"
-    class="text-white bg-primary px-10 py-3 rounded hover:bg-primary-lighter active:bg-primary-darker"
+    class="bg-primary-lighter px-10 py-3 rounded hover:bg-primary active:bg-primary-darker"
   >
     <slot />
   </button>

@@ -1,6 +1,6 @@
 <template>
   <section>
-    <h3 class="text-lg text-primary-darker">{{ title }}</h3>
+    <h3 class="text-lg text-primary-darkest">{{ title }}</h3>
     <p><slot /></p>
   </section>
 </template>

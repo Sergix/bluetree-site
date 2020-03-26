@@ -1,11 +1,11 @@
 <template>
   <!-- rounded app bar: "border-0 rounded-full m-2 shadow-md" -->
-  <header class="flex flex-row pl-8 pr-4 py-2 bg-primary-darker z-10 lg:px-32">
-    <h2 class="flex flex-0 text-white items-center text-base font-normal">
+  <header class="flex flex-row pl-8 pr-4 py-2 bg-primary-lighter z-10 lg:px-32">
+    <h2 class="flex flex-0 items-center text-base font-normal">
       Bluetree Landscaping
     </h2>
     <NavItems
-      class="navlist flex-1 pl-16 py-4 ml-auto my-auto hidden md:inline nav text-white"
+      class="navlist flex-1 pl-16 py-4 ml-auto my-auto hidden md:inline nav"
     />
     <MenuButton
       class="self-end align-end menu-button z-10 md:invisible"
@@ -66,7 +66,6 @@ export default {
 /deep/ .navlist > .nav-item {
   @apply px-4;
   @apply mr-2;
-  @apply text-white;
   @apply text-sm;
 }
 
