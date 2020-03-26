@@ -5,6 +5,8 @@ require('typeface-gelasio')
 require('typeface-roboto-slab')
 
 export default function(Vue, { router, head, isClient }) {
+  head.htmlAttrs = { lang: 'en' }
+
   head.meta.push({
     name: 'keywords',
     content: 'Landscaping,Grass,Yard,Work,Charleston,Lawn',

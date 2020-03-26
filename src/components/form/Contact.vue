@@ -1,32 +1,29 @@
 <template>
-  <form class="w-full text-center border border-gray-600 p-4">
-    <h2 class="item w-3/4 self-center text-center">
+  <form class="text-center border border-gray-600 p-4">
+    <h2 class="mx-auto w-3/4 self-center text-center">
       Contact us today for a free quote
     </h2>
-    <input
-      class="w-full item rounded bg-white border border-gray-600 mt-4 px-3 py-2"
-      type="text"
-      placeholder="email"
-    />
-    <button
-      class="text-white item bg-primary px-10 py-3 rounded mt-4"
-      type="submit"
-    >
-      Submit
-    </button>
+    <div class="text-left mt-4">
+      <label for="contact-email" class="text-left">Email</label>
+      <TextInput id="contact-email" class="w-full mt-2" />
+    </div>
+    <div class="text-left mt-2">
+      <label for="contact-message" class="text-left">Comment</label>
+      <TextInput id="contact-message" class="w-full mt-2" />
+    </div>
+    <Button class="mt-4" type="submit">Submit</Button>
   </form>
 </template>
 
 <script>
+import Button from '@/components/form/Button'
+import TextInput from '@/components/form/TextInput'
+
 export default {
   name: 'Contact',
+  components: {
+    Button,
+    TextInput,
+  },
 }
 </script>
-
-<style lang="scss" scoped>
-.item {
-  @apply block;
-  margin-left: auto;
-  margin-right: auto;
-}
-</style>
