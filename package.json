@@ -6,6 +6,7 @@
   "scripts": {
     "build": "gridsome build",
     "serve": "gridsome develop",
+    "serve:production": "gridsome build && npx lite-server --baseDir \"dist\"",
     "explore": "gridsome explore"
   },
   "dependencies": {

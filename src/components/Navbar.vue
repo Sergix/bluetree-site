@@ -10,10 +10,10 @@
     <MenuButton
       class="self-end align-end menu-button z-10 md:invisible"
       @click.native="toggleNavMenu"
-      :active="navMenu"
+      :active="navMenuActive"
     />
     <slide-x-right-transition>
-      <NavMenu v-show="navMenu" />
+      <NavMenu v-show="navMenuActive" />
     </slide-x-right-transition>
   </header>
 </template>
@@ -34,23 +34,23 @@ export default {
   },
   data() {
     return {
-      navMenu: false,
+      navMenuActive: false,
     }
   },
   methods: {
     toggleBodyOverflow() {
       const el = document.body
       const className = 'overflow-hidden'
-      this.navMenu
+      this.navMenuActive
         ? el.classList.add(className)
         : el.classList.remove(className)
     },
     toggleNavMenu() {
-      this.navMenu = !this.navMenu
+      this.navMenuActive = !this.navMenuActive
       this.toggleBodyOverflow()
     },
     closeMenu() {
-      this.navMenu = false
+      this.navMenuActive = false
       this.toggleBodyOverflow()
     },
   },
@@ -63,7 +63,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-/deep/ .navlist > .nav-item {
+::v-deep .navlist > .nav-item {
   @apply px-4;
   @apply mr-2;
   @apply text-sm;

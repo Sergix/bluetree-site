@@ -47,6 +47,8 @@ module.exports = {
         '1/2': '50%',
         '3/4': '75%',
         'full': '100%',
+        '32': '32em',
+        '24': '24em',
       },
     },
   },
@@ -57,7 +59,10 @@ module.exports = {
     plugin(function({ addBase, config }) {
       addBase({
         h1: {
-          fontSize: config('theme.fontSize.2xl'),
+          fontSize: config('theme.fontSize.5xl'),
+          color: config('theme.colors.secondary.darker'),
+          fontWeight: config('theme.fontWeight.bold'),
+          lineHeight: config('theme.lineHeight.none'),
         },
         h2: {
           fontSize: config('theme.fontSize.xl'),
