@@ -1,7 +1,7 @@
 <template>
   <textarea
     autocomplete="off"
-    maxlength="500"
+    :maxlength="maxlength"
     rows="4"
     v-bind:value="value"
     v-on:input="$emit('input', $event.target.value)"
@@ -12,6 +12,6 @@
 <script>
 export default {
   name: 'MultilineInput',
-  props: ['value'],
+  props: ['value', 'maxlength'],
 }
 </script>

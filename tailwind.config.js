@@ -15,6 +15,11 @@ module.exports = {
           default: '#A79E65',
           darker: '#2B2301',
         },
+        error: {
+          default: '#F96858',
+          darker: '#E71F08',
+        },
+        success: '#4ADFA5',
       },
       height: {
         '1/2': '50%',
@@ -53,7 +58,7 @@ module.exports = {
     },
   },
   variants: {
-    backgroundColor: ['responsive', 'hover', 'focus', 'active'],
+    backgroundColor: ['responsive', 'hover', 'focus', 'active', 'disabled'],
   },
   plugins: [
     plugin(function({ addBase, config }) {
