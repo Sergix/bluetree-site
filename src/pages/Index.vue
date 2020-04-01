@@ -7,12 +7,10 @@
 
     <div class="hero lg:flex lg:flex-row lg:px-32 lg:h-hero lg:items-center">
       <div class="lg:py-32 lg:mr-16 lg:flex-1 lg:max-w-1/2">
-        <h1
-          class="font-bold text-secondary-darker text-5xl my-4 leading-none lg:text-6xl"
-        >
+        <h1 class="my-4 leading-none lg:text-6xl">
           Quality service at a competitive price.
         </h1>
-        <p class="font-serif italic mt-4">
+        <p class="font-serif italic mt-4 lg:max-w-32">
           Residential or commercial, Bluetree Landscaping delivers the lawn care
           and outdoor servicing you need at the excellent quality you deserve.
         </p>
@@ -27,27 +25,23 @@
       </div>
     </div>
 
-    <div class="mt-12 mx-auto md:flex md:flex-row md:justify-center lg:w-1/2">
-      <OutlineSection title="Commercial" class="md:mr-2 lg:w-1/3">
+    <div class="mt-12 mx-auto md:flex md:flex-row md:justify-center lg:w-1/3">
+      <OutlineSection title="Commercial" class="lg:max-w-32">
         Complete property landscaping maintenance offered with one-time services
         and multi-service contracts.
       </OutlineSection>
-      <OutlineSection title="Residential" class="mt-4 md:mt-0 md:ml-2 lg:w-1/3">
+      <OutlineSection
+        title="Residential"
+        class="mt-4 md:mt-0 md:ml-4 lg:max-w-32"
+      >
         Landscaping services subject to complete customer optimization. Customer
         preference is our priority.
       </OutlineSection>
     </div>
 
-    <section class="mt-12 lg:mt-24 mx-auto lg:w-1/4">
+    <section class="mt-12 lg:mt-24 mx-auto">
       <h2 class="font-medium text-center">Contact Information</h2>
-      <DetailSection title="Email" class="mt-2">
-        <a href="mailto:bluetreelandscapingllc@gmail.com">
-          bluetreelandscapingllc@gmail.com
-        </a>
-      </DetailSection>
-      <DetailSection title="Phone" class="mt-4">
-        <a href="tel:+18438109722">(843) 810-9722</a>
-      </DetailSection>
+      <ContactInformation class="mx-auto lg:max-w-24" />
     </section>
 
     <section class="mx-auto mt-12 flex flex-col lg:flex-row lg:max-w-6xl">
@@ -61,7 +55,7 @@
         </p>
       </div>
       <g-image
-        class="mt-4 md:px-16 lg:py-16"
+        class="mt-4 md:px-16 lg:py-16 lg:max-w-2xl"
         src="~/assets/image/house-lawn_compressed-50.jpg"
         alt="House"
       />
@@ -80,13 +74,13 @@
         </p>
       </div>
       <g-image
-        class="mt-4 md:px-16 lg:py-16"
+        class="mt-4 md:px-16 lg:py-16 lg:max-w-2xl"
         src="~/assets/image/bridge_compressed-50.jpg"
         alt="Ravanel bridge"
       />
     </section>
 
-    <Contact class="mx-auto mt-24 md:w-2/3 lg:w-1/4" />
+    <Contact class="mx-auto mt-12 lg:mt-24" />
   </main>
 </template>
 
@@ -96,6 +90,7 @@ import ImageSection from '@/components/content/ImageSection'
 import OutlineSection from '@/components/content/OutlineSection'
 import Contact from '@/components/form/Contact'
 import Button from '@/components/form/Button'
+import ContactInformation from '@/components/content/ContactInformation'
 
 export default {
   name: 'IndexPage',
@@ -105,6 +100,7 @@ export default {
     ImageSection,
     OutlineSection,
     Contact,
+    ContactInformation,
   },
   metaInfo: {
     title: 'Home',
