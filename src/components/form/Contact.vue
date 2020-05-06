@@ -2,13 +2,11 @@
   <form
     name="contact"
     method="post"
-    data-netlify="true"
-    data-netlify-honeypot="bot-field"
     @submit.prevent="handleSubmit"
     class="text-center border border-gray-600 p-4 max-w-24"
   >
     <h2 class="mx-auto px-12 self-center text-center">
-      Contact us today for a free quote
+      Contact us today for pricing
     </h2>
 
     <!-- TODO: refactor -->
@@ -66,7 +64,7 @@ import { SlideYDownTransition } from 'vue2-transitions'
 /* toast notification setup */
 import Vue from 'vue'
 import VueToast from 'vue-toast-notification'
-import '~/scss/theme-sugar.css'
+import '~/scss/toast-theme-sugar.css'
 Vue.use(VueToast, {
   position: 'bottom',
   duratoin: 5000,

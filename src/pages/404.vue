@@ -10,6 +10,7 @@
 
 <script>
 export default {
+  name: '404Page',
   metaInfo: {
     title: '404',
   },
