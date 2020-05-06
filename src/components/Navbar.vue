@@ -1,11 +1,11 @@
 <template>
   <!-- rounded app bar: "border-0 rounded-full m-2 shadow-md" -->
-  <header class="flex flex-row pl-8 pr-4 py-2 bg-primary-lighter z-10 lg:px-32">
-    <h2 class="flex flex-0 items-center text-base font-normal">
-      Bluetree Landscaping
-    </h2>
+  <header class="flex flex-row pl-8 pr-4 py-2 bg-white z-10 lg:px-32">
+    <g-link to="/" class="max-w-sm w-3/4 my-4 md:px-4">
+      <g-image src="@/assets/logo/Bluetree Logo Inline.svg" />
+    </g-link>
     <NavItems
-      class="navlist flex-1 pl-16 py-4 ml-auto my-auto hidden md:inline nav"
+      class="navlist flex-1 pl-24 py-4 ml-auto my-auto hidden md:inline nav"
     />
     <MenuButton
       class="self-end align-end menu-button z-10 md:invisible"
@@ -64,13 +64,18 @@ export default {
 
 <style lang="scss" scoped>
 ::v-deep .navlist > .nav-item {
-  @apply px-4;
-  @apply mr-2;
-  @apply text-sm;
+  @apply mr-16;
+  @apply pb-1;
+  @apply text-lg;
+
+  &.active--exact {
+    @apply border-b-2;
+    @apply border-primary;
+  }
 }
 
 .menu-button {
   margin-left: auto;
-  margin-top: 5px;
+  margin-bottom: 8px;
 }
 </style>

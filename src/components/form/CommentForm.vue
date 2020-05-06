@@ -1,0 +1,103 @@
+<template>
+  <form
+    name="comment"
+    method="post"
+    class="flex flex-col"
+    @submit.prevent="uploadComment"
+  >
+    <section class="flex flex-row">
+      <div>
+        <label for="comment-name" class="block text-left">
+          Name
+        </label>
+        <TextInput
+          name="name"
+          id="comment-name"
+          class="mr-8 mt-2"
+          v-model="form.name"
+        />
+      </div>
+      <star-rating
+        class="mr-auto mt-6"
+        v-model="form.rating"
+        :star-size="32"
+        :show-rating="false"
+      ></star-rating>
+    </section>
+    <label for="comment-message" class="block text-left mt-4">
+      Comment Message
+    </label>
+    <MultilineInput
+      class="mt-4"
+      name="message"
+      id="comment-message"
+      v-model="form.message"
+    />
+    <Button
+      class="mr-auto mt-4"
+      type="submit"
+      :disabled="!(form.name && form.message && form.rating)"
+    >
+      Comment
+    </Button>
+  </form>
+</template>
+
+<script>
+import TextInput from '@/components/form/TextInput'
+import MultilineInput from '@/components/form/MultilineInput'
+import Button from '@/components/form/Button'
+
+import StarRating from 'vue-star-rating'
+
+import sanityClient from '@sanity/client'
+
+export default {
+  name: 'CommentForm',
+  components: {
+    TextInput,
+    MultilineInput,
+    Button,
+    StarRating,
+  },
+  data() {
+    return {
+      form: {
+        name: '',
+        message: '',
+        rating: 0,
+      },
+    }
+  },
+  methods: {
+    encode(data) {
+      return Object.keys(data)
+        .map(
+          (key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`
+        )
+        .join('&')
+    },
+    uploadComment() {
+      const axiosConfig = {
+        header: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      }
+
+      axios
+        .post(
+          '/',
+          this.encode({
+            'form-name': 'comment',
+            ...this.form,
+          }),
+          axiosConfig
+        )
+        .then(() => {
+          Vue.$toast.success('Comment submitted')
+        })
+        .catch(() => {
+          Vue.$toast.error('Failed to submit comment')
+        })
+    },
+  },
+}
+</script>

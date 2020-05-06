@@ -4,7 +4,9 @@
     <div
       class="flex-1 px-8 my-8 mx-auto min-w-full md:min-w-1/2 md:max-w-2xl lg:max-w-full"
     >
-      <router-view />
+      <transition name="fade" appear>
+        <router-view />
+      </transition>
     </div>
     <Footer class="flex-0 lg:mt-12" />
   </div>
@@ -43,3 +45,13 @@ export default {
   },
 }
 </script>
+
+<style>
+.fade-enter-active {
+  transition: opacity 0.5s;
+}
+
+.fade-enter {
+  opacity: 0;
+}
+</style>

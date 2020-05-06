@@ -8,8 +8,8 @@ module.exports = {
   siteName: 'Bluetree Landscaping LLC',
   siteUrl: 'https://www.bluetreelandscapingllc.com/',
   siteDescription:
-    'Bluetree Landscaping offers quality landscaping services for residential and commercial properties in Charleston, South Carolina.',
-  titleTemplate: 'Bluetree — %s',
+    'BlueTree Landscaping offers quality landscaping services for residential and commercial properties in Charleston, South Carolina.',
+  titleTemplate: 'BlueTree — %s',
 
   plugins: [
     {
