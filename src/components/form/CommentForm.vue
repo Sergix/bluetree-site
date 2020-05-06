@@ -17,12 +17,14 @@
           v-model="form.name"
         />
       </div>
-      <star-rating
-        class="mr-auto mt-6"
-        v-model="form.rating"
-        :star-size="32"
-        :show-rating="false"
-      ></star-rating>
+      <ClientOnly>
+        <star-rating
+          class="mr-auto mt-6"
+          v-model="form.rating"
+          :star-size="32"
+          :show-rating="false"
+        ></star-rating>
+      </ClientOnly>
     </section>
     <label for="comment-message" class="block text-left mt-4">
       Comment Message
@@ -48,8 +50,6 @@ import TextInput from '@/components/form/TextInput'
 import MultilineInput from '@/components/form/MultilineInput'
 import Button from '@/components/form/Button'
 
-import StarRating from 'vue-star-rating'
-
 import sanityClient from '@sanity/client'
 
 export default {
@@ -58,7 +58,8 @@ export default {
     TextInput,
     MultilineInput,
     Button,
-    StarRating,
+    // vue-star-rating does not support SSR
+    StarRating: () => import('vue-star-rating').then((m) => m),
   },
   data() {
     return {

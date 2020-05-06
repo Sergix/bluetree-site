@@ -39,11 +39,14 @@ export default {
   },
   methods: {
     toggleBodyOverflow() {
-      const el = document.body
-      const className = 'overflow-hidden'
-      this.navMenuActive
-        ? el.classList.add(className)
-        : el.classList.remove(className)
+      // no ssr
+      if (process.isClient) {
+        const el = document.body
+        const className = 'overflow-hidden'
+        this.navMenuActive
+          ? el.classList.add(className)
+          : el.classList.remove(className)
+      }
     },
     toggleNavMenu() {
       this.navMenuActive = !this.navMenuActive
