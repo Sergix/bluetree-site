@@ -73,9 +73,14 @@
       and Charleston county.
     </ImageSection>
 
-    <Contact class="mx-auto mt-12 lg:mt-24" />
+    <g-link to="/contact">
+      <section
+        class="mx-auto mt-12 lg:mt-24 max-w-md border border-black text-2xl text-center p-8 rounded-md shadow-lg"
+        >Contact Us Today</section
+      >
+    </g-link>
 
-    <Comments class="mt-8" />
+    <Comments class="mt-12" />
     <CommentForm class="mt-12" />
   </main>
 </template>
@@ -84,7 +89,6 @@
 import DetailSection from '@/components/content/DetailSection'
 import ImageSection from '@/components/content/ImageSection'
 import OutlineSection from '@/components/content/OutlineSection'
-import Contact from '@/components/form/Contact'
 import Button from '@/components/form/Button'
 import ContactInformation from '@/components/content/ContactInformation'
 import Comments from '@/components/content/Comments'
@@ -97,7 +101,6 @@ export default {
     DetailSection,
     ImageSection,
     OutlineSection,
-    Contact,
     ContactInformation,
     Comments,
     CommentForm,
