@@ -5,7 +5,7 @@
     class="flex flex-col"
     @submit.prevent="uploadComment"
   >
-    <section class="flex flex-row">
+    <section class="flex flex-col md:flex-row">
       <div>
         <label for="comment-name" class="block text-left">
           Name
@@ -19,7 +19,7 @@
       </div>
       <ClientOnly>
         <star-rating
-          class="mr-auto mt-6"
+          class="mr-auto mt-4 md:mt-6"
           v-model="form.rating"
           :star-size="32"
           :show-rating="false"

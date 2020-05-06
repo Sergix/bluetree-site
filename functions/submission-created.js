@@ -8,6 +8,8 @@ const client = sanityClient({
 exports.handler = function(event, context, callback) {
   const { payload } = JSON.parse(event.body)
 
+  console.log(payload)
+
   if (payload.form_name !== 'contact') return
 
   const result = await client.create({ _type: 'comment', ...payload })
