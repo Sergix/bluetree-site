@@ -50,6 +50,7 @@ import TextInput from '@/components/form/TextInput'
 import MultilineInput from '@/components/form/MultilineInput'
 import Button from '@/components/form/Button'
 
+import axios from 'axios'
 import sanityClient from '@sanity/client'
 
 export default {
@@ -93,10 +94,10 @@ export default {
           axiosConfig
         )
         .then(() => {
-          Vue.$toast.success('Comment submitted')
+          console.log('Comment success')
         })
         .catch(() => {
-          Vue.$toast.error('Failed to submit comment')
+          console.log('Comment fail')
         })
     },
   },
