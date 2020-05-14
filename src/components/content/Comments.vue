@@ -33,6 +33,10 @@ export default {
       useCdn: false,
     })
 
+    client.fetch('*[]', {}).then((comments) => {
+      this.comments = comments
+    })
+
     this.commentSubscription = client.listen('*[]', {}).subscribe((update) => {
       this.comments = update.result
       console.log(update)
