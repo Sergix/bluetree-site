@@ -81,7 +81,10 @@ export default {
     },
     uploadComment() {
       const axiosConfig = {
-        header: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        header: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+          'Access-Control-Allow-Origin': '*',
+        },
       }
 
       axios
@@ -96,8 +99,8 @@ export default {
         .then(() => {
           console.log('Comment success')
         })
-        .catch(() => {
-          console.log('Comment fail')
+        .catch((error) => {
+          console.error(error)
         })
     },
   },

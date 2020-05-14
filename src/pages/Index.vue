@@ -80,8 +80,10 @@
       >
     </g-link>
 
-    <Comments class="mt-12" />
-    <CommentForm class="mt-12" />
+    <section class="max-w-4xl mx-auto md:mt-24">
+      <Comments />
+      <CommentForm class="mt-12" />
+    </section>
   </main>
 </template>
 

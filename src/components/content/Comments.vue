@@ -1,9 +1,9 @@
 <template>
   <section class="mt-8">
     <h2>Comments</h2>
-    <p v-show="comments.length === 0" class="italic text-gray-600 mt-2"
-      >No comments.</p
-    >
+    <p v-show="comments.length === 0" class="italic text-gray-600 mt-2">
+      No comments.
+    </p>
     <ul class="mt-4">
       <li v-for="comment in comments" :key="comment.timestamp">
         <h3>{{ comment.name }}</h3>
@@ -35,6 +35,7 @@ export default {
 
     this.commentSubscription = client.listen('*[]', {}).subscribe((update) => {
       this.comments = update.result
+      console.log(update)
     })
   },
   beforeDestroy() {
