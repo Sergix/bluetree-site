@@ -2,6 +2,7 @@
   <form
     name="comment"
     method="post"
+    data-netlify="true"
     class="flex flex-col"
     @submit.prevent="uploadComment"
   >
@@ -84,7 +85,6 @@ export default {
       const axiosConfig = {
         header: {
           'Content-Type': 'application/x-www-form-urlencoded',
-          'Access-Control-Allow-Origin': '*',
         },
       }
 
