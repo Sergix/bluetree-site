@@ -1,11 +1,11 @@
 <template>
-  <main class="flex flex-col justify-center lg:flex-row lg:mx-auto">
+  <main class="flex flex-col justify-center lg:mx-auto lg:max-w-2xl lg:mt-16">
     <div class="lg:my-auto lg:mr-8">
-      <h1 class="text-center lg:text-left">Services</h1>
+      <h1 class="text-center">Services</h1>
 
       <h2></h2>
 
-      <p class="text-md mt-8 lg:max-w-24">
+      <p class="text-md mt-8 lg:max-w-24 lg:mx-auto">
         If you have a project or installation need that is not listed,
         <g-link to="/contact" class="underline text-primary-darkest">
           contact us
@@ -14,39 +14,57 @@
       </p>
     </div>
 
-    <div class="lg:my-auto lg:ml-8">
-      <section class="mt-8 mx-auto lg:w-56">
-        <h2 class="border-b">General maintenance</h2>
-        <p class="mt-2 ml-2">
+    <div class="mt-8 lg:my-auto lg:mt-16">
+      <section class="mt-8 mx-auto">
+        <h2 class="border-b pb-2">General maintenance</h2>
+        <p class="mt-4 ml-2">
           Mowing, bush hedging, weed trimming, edging, raking, leaf
           blowing/clean up
         </p>
       </section>
 
-      <section class="mt-4 mx-auto lg:w-56">
-        <h2 class="border-b">Projects</h2>
-        <ul class="mt-2 ml-2">
-          <li class="flex flex-row justify-center align-middle items-center">
-            <div class="flex flex-col">
-              <span class="text-xl">Debris hauling</span>
-              <span class="text-sm mt-4 w-32">
-                Wea haul leaves, wood, or any other landscaping debris.
+      <section class="mt-16 mx-auto">
+        <h2 class="border-b pb-2">Projects</h2>
+        <ul class="mt-8 services-list">
+          <li
+            class="flex flex-row mb-16 rounded-md border border-gray-300 h-64 overflow-hidden"
+            v-for="{
+              node: {
+                name,
+                content: {
+                  description,
+                  image: { filename: imageSrc },
+                },
+              },
+            } in $page.allStoryblokEntry.edges"
+            :key="name"
+          >
+            <div class="flex flex-col p-8 my-auto lg:px-16 lg:py-8">
+              <span class="text-xl">{{ name }}</span>
+              <span class="text-sm mt-4 w-32 lg:w-48">
+                {{ description }}
               </span>
             </div>
-            <g-image class="ml-8 w-64" src="@/assets/image/tools.jpg"
-          /></li>
-          <li>Pine straw</li>
-          <li>Mulch</li>
-          <li>Rock</li>
-          <li>Sod</li>
-          <li>Topsoil</li>
-          <li>Light grating</li>
-          <li>Small drainage projects</li>
+            <g-image class="ml-2 object-cover" :src="imageSrc" />
+          </li>
         </ul>
       </section>
     </div>
   </main>
 </template>
+
+<page-query>
+query Services {
+  allStoryblokEntry(filter: {full_slug: {regex: "services\/.+"}}) {
+    edges {
+      node {
+        name
+        content
+      }
+    }
+  }
+}
+</page-query>
 
 <script>
 export default {
@@ -57,4 +75,12 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.services-list > li:nth-child(even) {
+  @apply flex-row-reverse;
+
+  img {
+    @apply mr-2 ml-0;
+  }
+}
+</style>

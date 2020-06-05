@@ -57,8 +57,6 @@ export default {
       this.toggleBodyOverflow()
     },
   },
-
-  // on route change, close menu
   watch: {
     $route: 'closeMenu',
   },

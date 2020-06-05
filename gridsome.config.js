@@ -5,8 +5,8 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
 module.exports = {
-  siteName: 'Bluetree Landscaping LLC',
-  siteUrl: 'https://www.bluetreelandscapingllc.com/',
+  siteName: 'BlueTree Landscaping LLC',
+  siteUrl: 'https://www.bluetreesc.com/',
   siteDescription:
     'BlueTree Landscaping offers quality landscaping services for residential and commercial properties in Charleston, South Carolina.',
   titleTemplate: 'BlueTree — %s',
@@ -14,6 +14,16 @@ module.exports = {
   plugins: [
     {
       use: 'gridsome-plugin-tailwindcss',
+    },
+    {
+      use: 'gridsome-source-storyblok',
+      options: {
+        client: {
+          accessToken: '55Nl70dDrSbjaEAKkoMeVwtt',
+        },
+        version: 'draft',
+        typeName: 'StoryblokEntry',
+      },
     },
   ],
 

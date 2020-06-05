@@ -1,9 +1,9 @@
 <template>
   <main>
-    <object
+    <!-- <object
       class="absolute top-0 left-0 w-full h-38 bg-secondary-lighter z-neg-1 lg:invisible"
     >
-    </object>
+    </object> -->
 
     <div class="hero lg:flex lg:flex-row lg:px-32 lg:h-hero lg:items-center">
       <div class="lg:py-32 lg:mr-16 lg:flex-1 lg:max-w-1/2">
@@ -24,7 +24,7 @@
       </div>
       <div class="lg:mx-auto">
         <g-image
-          class="mt-8 lg:self-center lg:max-w-lg"
+          class="mt-8 lg:self-center lg:max-w-lg rounded"
           src="~/assets/image/tools_compressed-50.jpg"
           alt="Tools"
         />
@@ -75,13 +75,16 @@
 
     <g-link to="/contact">
       <section
-        class="mx-auto mt-12 lg:mt-24 max-w-md border border-black text-2xl text-center p-8 rounded-md shadow-lg"
-        >Contact Us Today</section
+        class="mx-auto mt-12 md:mt-24 max-w-md border border-black text-2xl text-center p-8 rounded-md shadow-lg"
       >
+        Contact Us Today
+      </section>
     </g-link>
 
-    <Comments class="mt-12" />
-    <CommentForm class="mt-12" />
+    <section class="max-w-4xl mx-auto mt-12 md:mt-24">
+      <Comments />
+      <CommentForm class="mt-12" />
+    </section>
   </main>
 </template>
 

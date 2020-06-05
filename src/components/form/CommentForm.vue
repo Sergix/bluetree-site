@@ -5,7 +5,8 @@
     class="flex flex-col"
     @submit.prevent="uploadComment"
   >
-    <section class="flex flex-col md:flex-row">
+    <h2 class="text-xl">Add Comment</h2>
+    <section class="flex flex-col mt-4 md:flex-row">
       <div>
         <label for="comment-name" class="block text-left">
           Name
@@ -81,7 +82,10 @@ export default {
     },
     uploadComment() {
       const axiosConfig = {
-        header: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        header: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+          'Access-Control-Allow-Origin': '*',
+        },
       }
 
       axios
@@ -96,8 +100,8 @@ export default {
         .then(() => {
           console.log('Comment success')
         })
-        .catch(() => {
-          console.log('Comment fail')
+        .catch((error) => {
+          console.error(error)
         })
     },
   },

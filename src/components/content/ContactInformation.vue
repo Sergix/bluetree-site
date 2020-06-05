@@ -1,8 +1,8 @@
 <template>
   <section>
     <DetailSection title="Email" class="mt-2">
-      <a href="mailto:bluetreelandscapingllc@gmail.com">
-        bluetreelandscapingllc@gmail.com
+      <a href="mailto:tyler@bluetreesc.com">
+        tyler@bluetreesc.com
       </a>
     </DetailSection>
     <DetailSection title="Phone" class="mt-4">
