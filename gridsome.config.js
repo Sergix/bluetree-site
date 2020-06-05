@@ -15,6 +15,16 @@ module.exports = {
     {
       use: 'gridsome-plugin-tailwindcss',
     },
+    {
+      use: 'gridsome-source-storyblok',
+      options: {
+        client: {
+          accessToken: '55Nl70dDrSbjaEAKkoMeVwtt',
+        },
+        version: 'draft',
+        typeName: 'StoryblokEntry',
+      },
+    },
   ],
 
   chainWebpack: (config) => {

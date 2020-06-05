@@ -5,45 +5,66 @@
       No comments.
     </p>
     <ul class="mt-4">
-      <li v-for="comment in comments" :key="comment.timestamp">
-        <h3>{{ comment.name }}</h3>
-        <p class="mt-2">{{ comment.message }}</p>
-        <p>{{ comment.rating }} {{ comment.timestamp }}</p>
+      <li
+        v-for="{ content: { name, message, rating }, slug } in comments"
+        :key="slug"
+        class="mt-4 border rounded-sm bg-gray-200 p-4"
+      >
+        <h3 class="text-lg">{{ name }}</h3>
+        <p class="mt-2 text-md">{{ message }}</p>
+        <ClientOnly>
+          <star-rating
+            class="mr-auto mt-4 md:mt-6"
+            :rating="rating"
+            :star-size="16"
+            :show-rating="false"
+            :read-only="true"
+          ></star-rating>
+        </ClientOnly>
+        <!-- convert UNIX timestamp to MM/DD/YYYY -->
+        <span class="text-gray-700 mt-1 text-xs">
+          {{
+            new Date(
+              parseInt(slug.split('-')[slug.split('-').length - 1])
+            ).toLocaleDateString('en-US')
+          }}
+        </span>
       </li>
     </ul>
   </section>
 </template>
 
 <script>
-//import Comment from '@/components/Comment'
-import sanityClient from '@sanity/client'
+import StoryblokClient from 'storyblok-js-client'
 
 export default {
   name: 'Comments',
+  components: {
+    // vue-star-rating does not support SSR
+    StarRating: () => import('vue-star-rating').then((m) => m),
+  },
   data() {
     return {
       comments: [],
       commentSubscription: null,
+      rating: 0,
     }
   },
   mounted() {
-    const client = sanityClient({
-      projectId: '7o23h513',
-      dataset: 'comments',
-      useCdn: false,
+    const Storyblok = new StoryblokClient({
+      accessToken: '55Nl70dDrSbjaEAKkoMeVwtt',
     })
 
-    client.fetch('*[]', {}).then((comments) => {
-      this.comments = comments
-    })
-
-    this.commentSubscription = client.listen('*[]', {}).subscribe((update) => {
-      this.comments = update.result
-      console.log(update)
+    Storyblok.get('cdn/stories', {
+      starts_with: 'comments/',
+    }).then((response) => {
+      this.comments = response.data.stories
     })
   },
   beforeDestroy() {
-    this.commentSubscription.unsubscribe()
+    if (this.commentSubscription) {
+      this.commentSubscription.unsubscribe()
+    }
   },
 }
 </script>

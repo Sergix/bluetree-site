@@ -1,20 +1,65 @@
-const sanityClient = require('@sanity/client')
-const client = sanityClient({
-  projectId: '7o23h513',
-  dataset: 'comments',
-  token: process.env.SANITY_TOKEN,
-})
+const StoryblokClient = require('storyblok-js-client')
+const spaceId = 85763
+const commentFolderId = 12897631
+const { STORYBLOK_API_KEY } = process.env
 
-exports.handler = function(event, context, callback) {
-  const { payload } = JSON.parse(event.body)
+const getTimestamp = () => {
+  const date = new Date()
+  const year = date
+    .getFullYear()
+    .toString()
+    .padStart(2, '0')
+  const day = date
+    .getDay()
+    .toString()
+    .padStart(2, '0')
+  const month = (date.getMonth() + 1).toString().padStart(2, '0')
+  const hour = date
+    .getHours()
+    .toString()
+    .padStart(2, '0')
+  const minute = date
+    .getMinutes()
+    .toString()
+    .padStart(2, '0')
 
-  console.log(payload)
+  return `${year}-${month}-${day} ${hour}:${minute}`
+}
 
-  if (payload.form_name !== 'contact') return
+exports.handler = async function(event, context, callback) {
+  if (payload.form_name !== 'comment') return
 
-  const result = await client.create({ _type: 'comment', ...payload })
+  const { name, rating, message } = JSON.parse(event.body)
+  const timestamp = getTimestamp()
+  const slug = name
+    .trim()
+    .toLowerCase()
+    .split(' ')
+    .join('-')
+    .concat(`-${Date.now().toString()}`)
+
+  const Storyblok = new StoryblokClient({
+    oauthToken: STORYBLOK_API_KEY,
+  })
+
+  const response = await Storyblok.post(`spaces/${spaceId}/stories/`, {
+    story: {
+      name,
+      slug,
+      content: {
+        component: 'comment',
+        name,
+        rating,
+        message,
+        timestamp,
+      },
+      parent_id: commentFolderId,
+    },
+    publish: 1,
+  })
+
   callback(null, {
-    statusCode: 200,
-    body: 'Comment creation success',
+    statusCode: response.status,
+    body: 'Function completed',
   })
 }

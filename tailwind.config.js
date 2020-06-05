@@ -71,7 +71,7 @@ module.exports = {
           lineHeight: config('theme.lineHeight.none'),
         },
         h2: {
-          fontSize: config('theme.fontSize.xl'),
+          fontSize: config('theme.fontSize.2xl'),
         },
         h3: {
           fontSize: config('theme.fontSize.lg'),
