@@ -2,7 +2,6 @@
   <form
     name="comment"
     method="post"
-    data-netlify="true"
     class="flex flex-col"
     @submit.prevent="uploadComment"
   >
