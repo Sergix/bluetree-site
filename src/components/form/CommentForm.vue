@@ -84,7 +84,6 @@ export default {
       const axiosConfig = {
         header: {
           'Content-Type': 'application/x-www-form-urlencoded',
-          'Access-Control-Allow-Origin': '*',
         },
       }
 
