@@ -96,8 +96,8 @@ export default {
           }),
           axiosConfig
         )
-        .then(() => {
-          console.log('Comment success')
+        .then((response) => {
+          console.log(response)
         })
         .catch((error) => {
           console.error(error)
