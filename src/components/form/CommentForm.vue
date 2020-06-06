@@ -73,29 +73,9 @@ export default {
     }
   },
   methods: {
-    encode(data) {
-      return Object.keys(data)
-        .map(
-          (key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`
-        )
-        .join('&')
-    },
     uploadComment() {
-      const axiosConfig = {
-        header: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-        },
-      }
-
       axios
-        .post(
-          '/',
-          this.encode({
-            'form-name': 'comment',
-            ...this.form,
-          }),
-          axiosConfig
-        )
+        .post('/.netlify/functions/newComment', JSON.stringify(this.form))
         .then((response) => {
           console.log(response)
         })
