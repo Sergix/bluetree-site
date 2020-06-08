@@ -16,7 +16,6 @@
       </label>
       <TextInput
         v-model="form.email"
-        @input="email"
         name="email"
         id="contact-email"
         class="block mt-2"
@@ -26,7 +25,6 @@
       </label>
       <MultilineInput
         v-model="form.comment"
-        @input="comment"
         name="comment"
         id="contact-message"
         class="block mt-2"
@@ -38,16 +36,14 @@
     </div>
     <!-- end refactor -->
 
-    <slide-y-down-transition>
-      <span
-        v-show="emailNotVerified && form.email.length > 0"
-        class="text-error-darker text-center p-2 block"
-      >
-        Please enter a valid email.
-      </span>
-    </slide-y-down-transition>
+    <span
+      :class="{ visible: emailNotVerified && form.email.length > 0 }"
+      class="text-error-darker text-center p-2 block email-warning"
+    >
+      Please enter a valid email.
+    </span>
 
-    <Button class="mt-6" type="submit" :disabled="emailNotVerified">
+    <Button class="mt-6 mb-4" type="submit" :disabled="emailNotVerified">
       Submit
     </Button>
   </form>
@@ -67,7 +63,7 @@ import VueToast from 'vue-toast-notification'
 import '~/scss/toast-theme-sugar.css'
 Vue.use(VueToast, {
   position: 'bottom',
-  duratoin: 5000,
+  duration: 5000,
   queue: false,
 })
 /* end toast notification setup */
@@ -83,14 +79,15 @@ export default {
     MultilineInput,
     SlideYDownTransition,
   },
+  computed: {
+    charsLeft() {
+      return MAX_COMMENT_CHARS - this.form.comment.length
+    },
+    emailNotVerified() {
+      return !this.form.email.match(REGEX_EMAIL)
+    },
+  },
   methods: {
-    comment(value) {
-      this.charsLeft = MAX_COMMENT_CHARS - value.length
-    },
-    email(value) {
-      this.emailNotVerified = !this.form.email.match(REGEX_EMAIL)
-    },
-
     encode(data) {
       return Object.keys(data)
         .map(
@@ -128,10 +125,19 @@ export default {
         email: '',
       },
 
-      charsLeft: MAX_COMMENT_CHARS,
       maxlength: MAX_COMMENT_CHARS,
-      emailNotVerified: true,
     }
   },
 }
 </script>
+
+<style lang="scss" scoped>
+.email-warning {
+  transition: opacity 0.1s;
+  opacity: 0;
+
+  &.visible {
+    opacity: 100;
+  }
+}
+</style>
