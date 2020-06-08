@@ -81,18 +81,20 @@ export default {
     }
   },
   methods: {
-    uploadComment() {
+    clearForm() {
       this.form.name = ''
       this.form.message = ''
       this.form.rating = 0
-
+    },
+    uploadComment() {
       axios
         .post('/.netlify/functions/newComment', JSON.stringify(this.form))
         .then((response) => {
           this.$store.commit('addComment', {
-            content: this.form,
+            content: Object.assign({}, this.form),
             slug: Date.now().toString(),
           })
+          this.clearForm()
         })
         .catch((error) => {
           console.error(error)
