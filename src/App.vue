@@ -2,7 +2,7 @@
   <div id="app" class="layout flex flex-col min-h-screen text-black">
     <Navbar class="flex-shrink-0" />
     <div
-      class="flex-1 px-8 my-8 mx-auto min-w-full md:min-w-1/2 md:max-w-2xl lg:max-w-full"
+      class="flex-1 px-8 my-8 mx-auto min-w-full overflow-x-hidden md:min-w-1/2 md:max-w-2xl lg:max-w-full"
     >
       <transition name="fade" appear>
         <router-view />

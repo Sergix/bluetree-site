@@ -1,5 +1,5 @@
 <template>
-  <footer class="bg-primary-lighter px-8 py-4 lg:px-32">
+  <footer class="bg-royal text-white px-8 py-4 lg:px-16">
     <h2 class="text-base text-lg">{{ $static.metadata.siteName }}</h2>
     <NavItems class="flex flex-col mt-4 nav-items" />
     <SocialIcons class="flex flex-row mt-4" />

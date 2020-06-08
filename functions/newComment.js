@@ -27,7 +27,7 @@ const getTimestamp = () => {
 }
 
 exports.handler = async function(event, context, callback) {
-  if (payload.form_name !== 'comment') return
+  console.log(event)
 
   const { name, rating, message } = JSON.parse(event.body)
   const timestamp = getTimestamp()

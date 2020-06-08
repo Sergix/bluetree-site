@@ -10,9 +10,10 @@
         <h1 class="my-4 leading-none lg:text-6xl">
           Quality service at a competitive price.
         </h1>
-        <p class="font-serif italic mt-4 lg:mt-8 lg:max-w-32">
-          Residential or commercial, Bluetree Landscaping delivers the lawn care
-          and outdoor servicing you need at the excellent quality you deserve.
+        <p class="font-serif italic mt-6 lg:mt-8 lg:max-w-32">
+          Residential and commercial, Bluetree Landscaping delivers the lawn
+          care and outdoor servicing you need at the excellent quality you
+          deserve.
         </p>
         <Button
           class="mt-4 lg:mt-8"
@@ -22,18 +23,23 @@
           Contact Us
         </Button>
       </div>
-      <div class="lg:mx-auto">
+      <div class="relative mt-8 lg:mx-auto mb-16 lg:mt-0">
         <g-image
-          class="mt-8 lg:self-center lg:max-w-lg rounded"
+          class="rounded lg:self-center lg:max-w-lg lg:-mb-12"
           src="~/assets/image/tools_compressed-50.jpg"
+          alt="Tools"
+        />
+        <g-image
+          class="absolute -mt-64 ml-8 z-neg-1 rounded lg:max-w-lg hidden lg:inline"
+          src="~/assets/image/house-lawn_compressed-50.jpg"
           alt="Tools"
         />
       </div>
     </div>
 
-    <div class="mt-12 mx-auto md:flex md:flex-row md:justify-center lg:w-1/3">
+    <div class="mt-12 mx-auto md:flex md:flex-row md:justify-center">
       <g-link to="/services">
-        <OutlineSection title="Commercial" class="lg:max-w-32">
+        <OutlineSection title="Commercial" class="lg:max-w-xs">
           Complete property landscaping maintenance offered with one-time
           services and multi-service contracts.
         </OutlineSection>
@@ -41,7 +47,7 @@
       <g-link to="/services">
         <OutlineSection
           title="Residential"
-          class="mt-4 md:mt-0 md:ml-4 lg:max-w-32"
+          class="mt-4 md:mt-0 min-w-full md:ml-4 lg:max-w-xs"
         >
           Landscaping services subject to complete customer optimization.
           Customer preference is our priority.

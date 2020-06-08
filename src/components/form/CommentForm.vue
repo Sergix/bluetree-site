@@ -36,8 +36,11 @@
       id="comment-message"
       v-model="form.message"
     />
+    <span class="text-right text-xs font-light italic p-1 mt-1">
+      {{ charsLeft }} characters left
+    </span>
     <Button
-      class="mr-auto mt-4"
+      class="mr-auto mt-2"
       type="submit"
       :disabled="!(form.name && form.message && form.rating)"
     >
@@ -63,6 +66,11 @@ export default {
     // vue-star-rating does not support SSR
     StarRating: () => import('vue-star-rating').then((m) => m),
   },
+  computed: {
+    charsLeft() {
+      return 500 - this.form.message.length
+    },
+  },
   data() {
     return {
       form: {
@@ -73,31 +81,18 @@ export default {
     }
   },
   methods: {
-    encode(data) {
-      return Object.keys(data)
-        .map(
-          (key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`
-        )
-        .join('&')
-    },
     uploadComment() {
-      const axiosConfig = {
-        header: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-        },
-      }
+      this.form.name = ''
+      this.form.message = ''
+      this.form.rating = 0
 
       axios
-        .post(
-          '/',
-          this.encode({
-            'form-name': 'comment',
-            ...this.form,
-          }),
-          axiosConfig
-        )
-        .then(() => {
-          console.log('Comment success')
+        .post('/.netlify/functions/newComment', JSON.stringify(this.form))
+        .then((response) => {
+          this.$store.commit('addComment', {
+            content: this.form,
+            slug: Date.now().toString(),
+          })
         })
         .catch((error) => {
           console.error(error)

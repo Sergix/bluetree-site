@@ -7,7 +7,7 @@
 
       <p class="text-md mt-8 lg:max-w-24 lg:mx-auto">
         If you have a project or installation need that is not listed,
-        <g-link to="/contact" class="underline text-primary-darkest">
+        <g-link to="/contact" class="underline text-royal cursor-pointer">
           contact us
         </g-link>
         and we'll provide pricing for your project.
@@ -27,7 +27,7 @@
         <h2 class="border-b pb-2">Projects</h2>
         <ul class="mt-8 services-list">
           <li
-            class="flex flex-row mb-16 rounded-md border border-gray-300 h-64 overflow-hidden"
+            class="flex flex-row mb-16 rounded border border-gray-400 h-64 overflow-hidden shadow"
             v-for="{
               node: {
                 name,
