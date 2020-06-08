@@ -19,6 +19,11 @@ module.exports = {
           default: '#F96858',
           darker: '#E71F08',
         },
+        royal: {
+          lighter: '#618ec2',
+          default: '#467AB5',
+          darker: '#396393',
+        },
         success: '#4ADFA5',
       },
       height: {
@@ -28,7 +33,7 @@ module.exports = {
         '32': '32em',
         '16': '16em',
         '9/10': '90%',
-        hero: '80vh',
+        hero: '75vh',
       },
       zIndex: {
         'neg-1': '-1',
@@ -66,7 +71,7 @@ module.exports = {
       addBase({
         h1: {
           fontSize: config('theme.fontSize.5xl'),
-          color: config('theme.colors.secondary.darker'),
+          color: config('theme.colors.royal.default'),
           fontWeight: config('theme.fontWeight.bold'),
           lineHeight: config('theme.lineHeight.none'),
         },
