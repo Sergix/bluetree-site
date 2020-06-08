@@ -11,8 +11,9 @@
           Quality service at a competitive price.
         </h1>
         <p class="font-serif italic mt-4 lg:mt-8 lg:max-w-32">
-          Residential or commercial, Bluetree Landscaping delivers the lawn care
-          and outdoor servicing you need at the excellent quality you deserve.
+          Residential and commercial, Bluetree Landscaping delivers the lawn
+          care and outdoor servicing you need at the excellent quality you
+          deserve.
         </p>
         <Button
           class="mt-4 lg:mt-8"

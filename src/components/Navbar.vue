@@ -1,6 +1,8 @@
 <template>
   <!-- rounded app bar: "border-0 rounded-full m-2 shadow-md" -->
-  <header class="flex flex-row pl-8 pr-4 py-2 bg-white z-10 lg:px-32">
+  <header
+    class="flex flex-row items-center pl-8 pr-4 py-2 bg-white z-10 lg:px-32"
+  >
     <g-link to="/" class="max-w-sm w-3/4 my-4 md:px-4">
       <g-image src="@/assets/logo/Bluetree Logo Inline.svg" />
     </g-link>
@@ -8,7 +10,7 @@
       class="navlist flex-1 pl-24 py-4 ml-auto my-auto hidden md:inline nav"
     />
     <MenuButton
-      class="self-end align-end menu-button z-10 md:invisible"
+      class="menu-button z-10 md:invisible"
       @click.native="toggleNavMenu"
       :active="navMenuActive"
     />
@@ -77,6 +79,6 @@ export default {
 
 .menu-button {
   margin-left: auto;
-  margin-bottom: 8px;
+  margin-top: 0.25em;
 }
 </style>

@@ -21,7 +21,8 @@
             :read-only="true"
           ></star-rating>
         </ClientOnly>
-        <!-- convert UNIX timestamp to MM/DD/YYYY -->
+
+        <!-- convert timestamp to MM/DD/YYYY -->
         <span class="text-gray-700 mt-1 text-xs">
           {{
             new Date(
