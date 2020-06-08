@@ -81,6 +81,11 @@ export default {
     }
   },
   methods: {
+    clearForm() {
+      this.form.name = ''
+      this.form.message = ''
+      this.form.rating = 0
+    },
     uploadComment() {
       axios
         .post('/.netlify/functions/newComment', JSON.stringify(this.form))
@@ -89,14 +94,11 @@ export default {
             content: Object.assign({}, this.form),
             slug: Date.now().toString(),
           })
+          this.clearForm()
         })
         .catch((error) => {
           console.error(error)
         })
-
-      this.form.name = ''
-      this.form.message = ''
-      this.form.rating = 0
     },
   },
 }
