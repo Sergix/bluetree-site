@@ -25,7 +25,8 @@
     "vue-progress-button": "^1.3.0",
     "vue-star-rating": "^1.6.1",
     "vue-toast-notification": "^0.2.0",
-    "vue2-transitions": "^0.3.0"
+    "vue2-transitions": "^0.3.0",
+    "vuex": "^3.4.0"
   },
   "devDependencies": {
     "gridsome-plugin-tailwindcss": "^2.2.43",

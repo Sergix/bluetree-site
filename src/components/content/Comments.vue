@@ -36,6 +36,7 @@
 
 <script>
 import StoryblokClient from 'storyblok-js-client'
+import { mapState } from 'vuex'
 
 export default {
   name: 'Comments',
@@ -43,13 +44,9 @@ export default {
     // vue-star-rating does not support SSR
     StarRating: () => import('vue-star-rating').then((m) => m),
   },
-  data() {
-    return {
-      comments: [],
-      commentSubscription: null,
-      rating: 0,
-    }
-  },
+  computed: mapState({
+    comments: (state) => state.comments,
+  }),
   mounted() {
     const Storyblok = new StoryblokClient({
       accessToken: '55Nl70dDrSbjaEAKkoMeVwtt',
@@ -58,13 +55,8 @@ export default {
     Storyblok.get('cdn/stories', {
       starts_with: 'comments/',
     }).then((response) => {
-      this.comments = response.data.stories
+      this.$store.commit('setComments', response.data.stories)
     })
-  },
-  beforeDestroy() {
-    if (this.commentSubscription) {
-      this.commentSubscription.unsubscribe()
-    }
   },
 }
 </script>

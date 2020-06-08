@@ -77,7 +77,10 @@ export default {
       axios
         .post('/.netlify/functions/newComment', JSON.stringify(this.form))
         .then((response) => {
-          console.log(response)
+          this.$store.commit('addComment', {
+            content: this.form,
+            slug: Date.now().toString(),
+          })
         })
         .catch((error) => {
           console.error(error)
