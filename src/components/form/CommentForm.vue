@@ -86,7 +86,7 @@ export default {
         .post('/.netlify/functions/newComment', JSON.stringify(this.form))
         .then((response) => {
           this.$store.commit('addComment', {
-            content: this.form,
+            content: Object.assign({}, this.form),
             slug: Date.now().toString(),
           })
         })
