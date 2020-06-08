@@ -82,10 +82,6 @@ export default {
   },
   methods: {
     uploadComment() {
-      this.form.name = ''
-      this.form.message = ''
-      this.form.rating = 0
-
       axios
         .post('/.netlify/functions/newComment', JSON.stringify(this.form))
         .then((response) => {
@@ -97,6 +93,10 @@ export default {
         .catch((error) => {
           console.error(error)
         })
+
+      this.form.name = ''
+      this.form.message = ''
+      this.form.rating = 0
     },
   },
 }
