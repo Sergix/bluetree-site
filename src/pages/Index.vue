@@ -32,7 +32,7 @@
         <g-image
           class="absolute -mt-64 ml-8 z-neg-1 rounded lg:max-w-lg hidden lg:inline"
           src="~/assets/image/house-lawn_compressed-50.jpg"
-          alt="Tools"
+          alt="Yard"
         />
       </div>
     </div>
@@ -55,10 +55,7 @@
       </g-link>
     </div>
 
-    <section class="mt-12 lg:mt-24 mx-auto">
-      <h2 class="font-medium text-center">Contact Information</h2>
-      <ContactInformation class="mx-auto lg:max-w-24" />
-    </section>
+    <ContactInformation class="mt-12 lg:mt-24 mx-auto lg:max-w-24" />
 
     <ImageSection
       title="Various Services"

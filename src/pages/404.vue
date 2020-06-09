@@ -2,7 +2,7 @@
   <main>
     <h1 class="text-3xl font-medium text-center">Page not found</h1>
     <p class="mt-8 text-lg font-serif text-center">
-      <g-link class="text-primary-darker underline" to="/">Click here</g-link>
+      <g-link class="text-royal-darker underline" to="/">Click here</g-link>
       to go to our home page.
     </p>
   </main>

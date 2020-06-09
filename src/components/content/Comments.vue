@@ -1,7 +1,7 @@
 <template>
   <section class="mt-8">
     <h2>Comments</h2>
-    <p v-show="comments.length === 0" class="italic text-gray-600 mt-2">
+    <p v-show="comments.length === 0" class="italic text-gray-700 mt-2">
       No comments.
     </p>
     <ul class="mt-4">

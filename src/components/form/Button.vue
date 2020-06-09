@@ -1,7 +1,7 @@
 <template>
   <button
     :type="type"
-    class="bg-royal text-white px-10 py-3 rounded font-medium hover:bg-royal-lighter active:bg-royal-darker disabled:bg-gray-400 disabled:cursor-not-allowed"
+    class="bg-royal text-white px-10 py-3 rounded font-medium border-gray-500 hover:bg-royal-lighter active:bg-royal-darker disabled:opacity-50 disabled:cursor-not-allowed"
     :disabled="disabled"
   >
     <slot />

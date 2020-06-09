@@ -4,7 +4,10 @@
     class="flex flex-row items-center pl-8 pr-4 py-2 bg-white z-10 lg:px-32"
   >
     <g-link to="/" class="max-w-sm w-3/4 my-4 md:px-4">
-      <g-image src="@/assets/logo/Bluetree Logo Inline.svg" />
+      <g-image
+        alt="BlueTree Landscaping"
+        src="@/assets/logo/Bluetree Logo Inline.svg"
+      />
     </g-link>
     <NavItems
       class="navlist flex-1 pl-24 py-4 ml-auto my-auto hidden md:inline nav"
