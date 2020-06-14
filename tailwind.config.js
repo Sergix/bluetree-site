@@ -20,9 +20,9 @@ module.exports = {
           darker: '#E71F08',
         },
         royal: {
-          lighter: '#618ec2',
-          default: '#467AB5',
-          darker: '#396393',
+          lighter: '#5282BC',
+          default: '#355A88',
+          darker: '#2B496E',
         },
         success: '#4ADFA5',
       },
@@ -65,6 +65,9 @@ module.exports = {
   },
   variants: {
     backgroundColor: ['responsive', 'hover', 'focus', 'active', 'disabled'],
+    border: ['responsive', 'hover', 'focus', 'active', 'disabled'],
+    opacity: ['responsive', 'hover', 'focus', 'active', 'disabled'],
+    cursor: ['responsive', 'hover', 'focus', 'active', 'disabled'],
   },
   plugins: [
     plugin(function({ addBase, config }) {

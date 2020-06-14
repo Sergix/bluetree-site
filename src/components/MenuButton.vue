@@ -19,6 +19,5 @@ import '@/scss/hamburgers/hamburgers.scss'
 export default {
   name: 'MenuButton',
   props: ['active'],
-  components: {},
 }
 </script>

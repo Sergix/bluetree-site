@@ -1,5 +1,6 @@
 <template>
   <section>
+    <h2 class="font-medium text-center">Contact Information</h2>
     <DetailSection title="Email" class="mt-2">
       <a href="mailto:tyler@bluetreesc.com">
         tyler@bluetreesc.com
