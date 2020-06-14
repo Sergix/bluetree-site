@@ -11,8 +11,8 @@
           Quality service at a competitive price.
         </h1>
         <p class="font-serif italic mt-6 lg:mt-8 lg:max-w-32">
-          Residential and commercial, Bluetree Landscaping delivers the lawn
-          care and outdoor servicing you need at the excellent quality you
+          Whether commercial or residential, Bluetree Landscaping delivers the
+          lawn care and outdoor servicing you need at the excellent quality you
           deserve.
         </p>
         <Button
@@ -40,8 +40,8 @@
     <div class="mt-12 mx-auto md:flex md:flex-row md:justify-center">
       <g-link to="/services">
         <OutlineSection title="Commercial" class="lg:max-w-xs">
-          Complete property landscaping maintenance offered with one-time
-          services and multi-service contracts.
+          Complete property maintenance and landscaping projects offered with
+          one-time services and multi-service contracts.
         </OutlineSection>
       </g-link>
       <g-link to="/services">
@@ -62,8 +62,8 @@
       image="house-lawn_compressed-50.jpg"
       alt="House"
     >
-      Complete property landscaping maintenance offered with one-time services
-      and multi-service contracts.
+      BlueTree Landscaping is confident that we can meet all of our customers'
+      needs and find solutions for every situation.
     </ImageSection>
 
     <ImageSection
@@ -72,8 +72,8 @@
       alt="Ravanel bridge"
       reversed="true"
     >
-      We service the greater Charleston area, including Dorchester, Berkeley,
-      and Charleston county.
+      We service the tri-county area, including Dorchester, Berkeley, and
+      Charleston county.
     </ImageSection>
 
     <g-link to="/contact">

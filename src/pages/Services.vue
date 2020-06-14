@@ -4,7 +4,7 @@
       <h1 class="text-center">Services</h1>
 
       <p class="text-md mt-8 lg:max-w-24 lg:mx-auto">
-        If you have a project or installation need that is not listed,
+        If you have any landscaping project needs,
         <g-link to="/contact" class="underline text-royal cursor-pointer">
           contact us
         </g-link>
