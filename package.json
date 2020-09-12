@@ -16,7 +16,7 @@
     "gridsome-source-sanity": "^1.0.5",
     "gridsome-source-storyblok": "^1.0.1",
     "hamburgers": "^1.1.3",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.1",
     "storyblok-js-client": "^2.5.0",
     "typeface-gelasio": "^1.1.3",
     "typeface-roboto-slab": "^1.1.4",
